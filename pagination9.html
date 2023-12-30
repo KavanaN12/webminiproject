@@ -1,0 +1,66 @@
+<html lang="eng">
+
+<head>
+<style>
+h1{
+    text-align:center;
+}
+</style>
+<h1>Love Stories</h1>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Pagination of movie cards</title>
+
+<link rel="stylesheet" href="style.css"></head>
+<body>
+
+
+<div class="container">
+<div class="list-wrapper">
+<div class="list-item">
+<div class="content">
+<img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61K7q53oKCL._AC_UF1000,1000_QL80_.jpg">
+<div class="text">
+<h3>Mungaru Male</h3>
+<p>IMBD</P>
+</div>
+</div>
+<div class="DESCRIPTION">
+<div class="d-text">
+
+<h4>Description:</h4>
+<h4>Preetam falls in love at first sight with Nandini. The sweet romance set in the monsoons, boosted by too good songs and music.</h4>
+<p>Mungaru Male (lit.Pre-monsoon rain) is a 2006 Indian Kannada-language romantic drama film.<br> co-written and directed by: Yogaraj Bhat,<br>  produced by :E. Krishnappa.<br> <h3>cast Ganesh,<br> Pooja Gandhi <br>Anant Nag.<br></h3>
+
+</p>
+</div>
+
+</div>
+
+</div>
+</div>
+<div id="pagination-container"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https:cdjns.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery,simplePagination.min.js"></script>
+<script>
+ var items=$('.list-wrapper.list-item');
+varnumItems=items.length;
+var perPage=3;
+
+items.slice(perPage).hide()
+('#pagination-container').pagination({
+items:numItems,
+ItemsOnPage:perPage,
+prevText:",",
+nextText:">",
+onPageClick:function(pageNumber){
+var showFrom=perPage*(pageNumber-1);
+items.hide().slice(showFrom,showTo).show();
+}
+})
+</script>
+</body>

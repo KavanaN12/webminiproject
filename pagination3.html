@@ -1,0 +1,83 @@
+<html lang="eng">
+
+<head>
+<style>
+h1{
+    text-align:center;
+}
+</style>
+<h1>Pan India Movies</h1>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Pagination of movie cards</title>
+
+<link rel="stylesheet" href="style.css"></head>
+<body>
+
+
+<div class="container">
+<div class="list-wrapper">
+<div class="list-item">
+<div class="content">
+<img src="https://pbs.twimg.com/media/FeDIZvEacAEGJ2G?format=jpg&name=4096x4096">
+<div class="text">
+<h3>Kantara</h3>
+<p>IMBD</P>
+</div>
+</div>
+<div class="DESCRIPTION">
+<div class="d-text">
+
+<h4>Drescription</h4>
+<p>When greed paves the way for betrayal, scheming and murder, a young tribal reluctantly dons the traditions of his ancestors to seek justice.<br>
+Directed and written by by:Rishab Shetty<br>
+Cast:
+Rishab Shetty in a dual role as
+Kaadubettu Shiva, a Kambala champion, who gets possessed by Guliga Daiva and Panjurli Daiva<br>
+Shiva's father, a Daiva Kola performer<br>
+Sapthami Gowda as Leela<br>
+Kishore as Muralidhar, a Deputy Range Forest Officer (D.R.F.O)<br>
+Achyuth Kumar as Devendra Suttooru<br>
+Pramod Shetty as Sudhakara<br>
+Prakash Thuminad as Raampa<br>
+Manasi Sudhir as Kamala, Shiva's mother<br>
+Produced by:Vijay Kirgandur<br>
+Production house:Hombale films
+</p>
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div id="pagination-container"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https:cdjns.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery,simplePagination.min.js"></script>
+<script>
+ var items=$('.list-wrapper.list-item');
+varnumItems=items.length;
+var perPage=3;
+
+items.slice(perPage).hide()
+('#pagination-container').pagination({
+items:numItems,
+ItemsOnPage:perPage,
+prevText:",",
+nextText:">",
+onPageClick:function(pageNumber){
+var showFrom=perPage*(pageNumber-1);
+items.hide().slice(showFrom,showTo).show();
+}
+})
+</script>
+</body>
+

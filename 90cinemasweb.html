@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web mini project</title>
+    <link rel="icon" type="icon" href="photoicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            border: border-box;
+        }
+        .navbar{
+            height: 60px;
+            width: 100%;
+            background-color: #0f1111;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .nav-logo{
+            height: 50px;
+        }
+        .logo{
+            background-image: url("cinema2.png");
+            background-size: cover;
+            height: 50px;
+            width: 100px;
+            
+        }
+        .border{
+            border: 2px solid transparent;
+            display: inline-block;
+
+        }
+        .border:hover{
+            border: 2px solid white;
+        }
+        .nav-add{
+            color: white;
+            margin: 3px;
+            width: 100px;
+        }
+        .add1{
+            color: gainsboro;
+            font-size: 0.85rem;
+            margin-left: 25px;
+        }
+        .add2{
+            color: white;
+            font-size: 1.25rem;
+        }
+        .add-ico{
+            display: flex;
+            align-items: center;
+        }
+        .nav-search{
+            display: flex;
+            justify-content: space-evenly;
+            background-color: white;
+            width: 650px;
+            height: 40px;
+            border-radius: 3px;
+        }
+        .nav-search:hover{
+            border: 2px solid rgb(234,138,12);
+        }
+        .search{
+            background-color: #f3f3f3;
+            width: 50px;
+            text-align: center;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            border: none;
+        }
+        .iconsearch{
+            background-color: rgb(234, 138, 12);
+            width: 40px;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+        }
+        .searchinput{
+            width: 540px;
+            border: none;
+            font-size: 1.1rem;
+        }
+        span{
+            font-size: 0.7rem;
+        }
+        .navsi2{
+            font-size: 0.85rem;
+            font-weight: bolder;
+        }
+        .nav-cart i{
+            font-size: 30px;
+        }
+        .nav-cart{
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+            padding: 5px;
+        }
+        .nav-cart p{
+            display: flex;
+            justify-content: end;
+            align-content: last baseline;
+            align-items: last baseline;
+        }
+        .panel{
+            height: 40px;
+            background-color: #222f3d;
+            display: flex;
+            color: white;
+            align-items: center;
+            justify-content: space-evenly;
+            font-size: 0.85rem;
+        }
+        .panel-all{
+            padding: 5px;
+        }
+        .panel-opps p{
+            display: inline;
+            margin-left: 15px;
+            padding: 5px;
+        }
+        .panel-opps{
+            width: 70%;
+        }
+        .panel-deals{
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 5px;
+        }
+        .hero-section{
+            background-image: url("cinemefirst.png");
+            background-size: cover;
+            height: 360px;
+            display: flex;
+            justify-content: center;
+        }
+        .heromessage{
+            background-color: white;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 300px;
+            width: 93%;
+        }
+        .line{
+            color: #007185;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .line:hover{
+            text-decoration: underline;
+            color: burlywood;
+        }
+        .box{
+            height: 400px;
+            width: 24%;
+            padding: 20px 0px 15px;
+            background-color: white;
+            padding: 5px;
+            margin-left:12px ;
+            margin-top: 12px;
+            margin-bottom: 12px;
+            border-radius: 1px;
+        }
+        .shop-section{
+            display: flex;
+            justify-content: space-evenly;
+            background-color: gainsboro;
+        }
+        .box-image1{
+            background-image: url("bollywood.png");
+            background-size: cover;
+            height: 320px;
+        }
+        .space1{
+            padding-bottom: 10px;
+        }
+        .space2{
+            padding-top: 10px;
+        }
+        .box-image2{
+            background-image: url("south indian.png");
+            background-size: cover;
+            height: 320px;
+        }
+        .box-image3{
+            background-image: url("show.png");
+            background-size: cover;
+            height: 320px;
+        }
+        .box-image4{
+            background-image: url("telugu.png");
+            background-size: cover;
+            height: 300px;
+        }
+        #off{
+            display: flex;
+            width: 90px;
+            background-color: red;
+            padding: 0px;
+            color: aliceblue;
+        }
+        #off1{
+            font-size: 0.9rem;
+        }
+        #off2{
+            font-size: 0.75rem;
+        }
+        .book-section{
+            display: flex;
+            justify-content: space-evenly;
+            background-color: gainsboro;
+        }
+        .boxs{
+            height: 300px;
+            width: 12%;
+            background-color: white;
+            margin-left:10px ;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 1px;
+        }
+        .box-image5{
+            background-image: url("horrer.png");
+            background-size: cover;
+            height: 200px;
+        }
+        .box-image6{
+            background-image: url("triller.png");
+            background-size: cover;
+            height: 200px;
+        }
+        .box-image7{
+            background-image: url("action2.png");
+            background-size: cover;
+            height: 200px;
+        }
+        .box-image8{
+            background-image: url("amazonb4.jpg");
+            background-size: cover;
+            height: 200px;
+        }
+        .box-image9{
+            background-image: url("amazonb5.jpg");
+            background-size: cover;
+            height: 200px;
+        }
+        .box-image10{
+            background-image: url("love.png");
+            background-size: cover;
+            height: 200px;
+        }
+        .box-image11{
+            background-image: url("romantic.png");
+            background-size: cover;
+            height: 200px;
+        }
+        .box-image12{
+            background-image: url("amazonb3.jpg");
+            background-size: cover;
+            height: 200px;
+        }
+        .space3{
+            padding-bottom: 10px;
+        }
+        .space4{
+            padding-top: 10px;
+        }
+        .box3{
+            margin-right: 12px;
+        }
+        .box12{
+            margin-right: 10px;
+        }
+        .foot1{
+            background-color: #455a71;
+            color: white;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.83rem;
+        }
+        .foot2{
+            background-color: #222f3d;
+            color: white;
+            height: 350px;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 50px;
+            padding-left: 120px;
+            padding-right: 120px;
+            font-size: medium;
+        }
+        .line2{
+            color: rgb(225, 222, 222);
+            text-decoration: none;
+            line-height: 30px;
+            font-size: 0.85rem;
+        }
+        .line2:hover{
+            text-decoration: underline;
+        }
+        #last1{
+            width: 150px;
+        }
+        .foot3{
+            background-color: #0f1111;
+            height: 40px;
+            display: flex;
+            padding: 30px;
+        }
+        .batch{
+            display: flex;
+            width: 50%;
+        }
+        hr{
+            height: 2px;
+            background-color: #007185;
+            padding: 0px;
+            border: 0px;
+        }
+        #india{
+            background-image: url("flag.ico");
+            background-size: cover;
+            width: 33px;
+            height: 25px;
+        }
+        #country{
+            display: flex;
+            color: gray;
+            display: inline-block;
+            background-color: #0f1111;
+            width: 80px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: gray;
+            position: relative;
+            left: 600px;
+            border: 1px solid grey;
+            font-size: 0.85rem;
+        }
+        #lang{
+            background-color: #0f1111;
+            color: gray;
+            padding: 5px;
+            position: relative;
+            left: 580px;
+        }
+        #currency{
+            display: inline-block;
+            background-color: #0f1111;
+            width: 80px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: gray;
+            position: relative;
+            left: 590px;
+            border: 1px solid grey;
+            font-size: 0.85rem;
+        }
+        .end{
+            position: relative;
+            left: 500px;
+        }
+        .foot4{
+            background-color: #0f1111;
+        }
+        .foot41{
+            display: flex;
+            justify-content: space-evenly;
+            padding-right: 200px;
+            padding-left: 200px;
+        }
+        #Amazon{
+            width: 100px;
+            padding: 0px;
+            text-align: left;
+            padding-top: 50px;
+        }
+        .line3{
+            width: 100px;
+            font-size: 0.7rem;
+            color: grey;
+            text-decoration: none;
+        }
+        .line3:hover{
+            text-decoration: underline;
+        }
+        #bold{
+            color:rgb(225, 222, 222) ;
+        }
+        #theend{
+            color: grey;
+            font-size: 0.7rem;
+            display: flex;
+            justify-content: center;
+        }
+        .final{
+            padding-left: 20px;
+            text-transform: capitalize;
+        }
+        .finish{
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+.linepage{
+    text-decoration: none;
+}
+.linepage:hover{
+            text-decoration: underline;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+                <div class="logo"></div>
+            </div>
+            <div class="nav-add border">
+                <p class="add1">App Of</p>
+                <div class="add-ico">
+                    <i class="fa-solid fa-location-dot"></i>&nbsp;
+                    <p class="add2">India</p>
+                </div>
+            </div>
+            <div class="nav-search">
+                <select class="search">
+                    <option>All</option>
+                </select>
+                <input placeholder="Search Movies" class="searchinput">
+                <div class="iconsearch">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="nav-signin border">
+                <p><span>Hello, Signin</span></p>
+                <p class="navsi2">Accounts & lists</p>
+            </div>
+            <div class="nav-returns border">
+                <p><span>Your</span></p>
+                <p class="navsi2">Favorites</p>
+            </div>
+            <div class="nav-cart border">
+                <i class="fa-solid fa-lock"></i>
+                <p>Privacy</p>
+            </div>
+        </div>
+        
+
+        <div class="panel">
+            <div class="panel-all border">
+                <i class="fa-solid fa-bars"></i>
+                All
+            </div>
+            <div class="panel-opps">
+                <p class="border">New Movies</p>
+                <p class="border">Premium List</p>
+                <p class="border">Registry</p>
+                <p class="border">Discounts</p>
+                <p class="border">Upload</p>
+            </div>
+            <div class="panel-deals border">
+                Advitisements of Short Movies
+            </div>
+        </div>
+    </header>
+    <div class="hero-section">
+        <div class="heromessage">
+            Enjoy your Theater Experience from Anywhere, Anytime. Just by visiting our website, Watch latest movies on Subscription.<a href="#" class="line">Click here to go to RIT CINEMAS</a>
+        </div>
+    </div>
+    <div class="shop-section">
+        <div class="box1 box">
+            <h2 class="space1">Find Your Joy</h2>
+            <div class="box-image1"></div>
+            <p class="space2"><a href="#" class="line">See more</a></p>
+        </div>
+        <div class="box2 box">
+            <h2 class="space1">Pan India Movies</h2>
+            <div class="box-image2"></div>
+            <p class="space2"><a href="90co_cinema.html" class="line">See more</a></p>
+        </div>
+        <div class="box4 box">
+            <h2 class="space1">Theater Prints</h2>
+            <div class="box-image4"></div>
+            <div id="off">
+            <div id="off1">HD Qaulity</div>
+            <div id="off2">*</div>
+            </div>
+            <p class="space2"><a href="#" class="line">See more</a></p>
+        </div>
+        <div class="box3 box">
+            <h2 class="space3">Celebrity Shows</h2>
+            <div class="box-image3"></div>
+            <p class="space4"><a href="#" class="line">See more</a></p>
+        </div>
+    </div>
+    <h1>Watch All Top Movies</h1>
+    <div class="book-section">
+        <div class="box5 boxs">
+            <h2 class="space3">Horrer</h2>
+            <div class="box-image5"></div>
+            <p class="space4"><a href="#" class="line">See more</a></p>
+        </div>
+        <div class="box6 boxs">
+            <h2 class="space3">Triller</h2>
+            <div class="box-image6"></div>
+            <p class="space4"><a href="#" class="line">See more</a></p>
+        </div>
+        <div class="box7 boxs">
+            <h2 class="space3">Action</h2>
+            <div class="box-image7"></div>
+            <div id="off">
+            <div id="off1">HD Quality</div>
+            <div id="off2">*</div>
+            </div>
+            <p class="space4"><a href="#" class="line">See more</a></p>
+        </div>
+        <div class="box8 boxs">
+            <h2 class="space3">Ancient</h2>
+            <div class="box-image8"></div>
+            <p class="space4"><a href="#" class="line">See more</a></p>
+        </div>
+        <div class="box9 boxs">
+            <h2 class="space3">Kids</h2>
+            <div class="box-image9"></div>
+            <p class="space4"><a href="90co_cinema2.html" class="line">See more</a></p>
+        </div>
+        <div class="box10 boxs">
+            <h2 class="space3">Love</h2>
+            <div class="box-image10"></div>
+            <p class="space4"><a href="90co_cinema3.html" class="line">See more</a></p>
+        </div>
+        <div class="box11 boxs">
+            <h2 class="space3">Romantic</h2>
+            <div class="box-image11"></div>
+            <p class="space4"><a href="#" class="line">See more</a></p>
+        </div>
+        <div class="box12 boxs">
+            <h2 class="space3">Bollywood</h2>
+            <div class="box-image12"></div>
+            <div id="off">
+            <div id="off1">Flat 10%</div>
+            <div id="off2">off</div>
+            </div>
+            <p class="space4"><a href="#" class="line">See more</a></p>
+        </div>
+    </div>
+    <footer>
+        <div class="foot1">
+            <a href="#" class="line2">Back to top</a>
+        </div>
+        <div class="foot2">
+            <div id="last"><b>New Bollywood</b><br>
+                <a href="#" class="line2">Animal</a><br>
+                <a href="#" class="line2">Sam Bahadur</a><br>
+                <a href="#" class="line2">Pathan</a><br>
+                <a href="#" class="line2">Hi Papa</a><br>
+                <a href="#" class="line2">Mast Mein Rehne ka</a><br>
+                <a href="#" class="line2">The Last Coffee</a><br>
+            </div>
+            <div id="last"><b>South Indian Movies</b><br>
+            <a href="#" class="line2">Kannagi</a><br>
+            <a href="#" class="line2">Japan</a><br>
+            <a href="#" class="line2">Jigar Thanda</a><br>
+            <a href="#" class="line2">Veera Maari</a><br>
+            <a href="#" class="line2">Lio</a><br>
+            <a href="#" class="line2">Maaveeran</a><br>
+            <a href="#" class="line2">Tagaru Palya</a><br>
+            <a href="#" class="line2">Bad Manners</a><br>
+            </div>
+            <div id="last"><b>Telugu Block-Busters</b><br>
+                <a href="#" class="line2">Tiger Narasimha Swamy</a><br>
+                <a href="#" class="line2">Bhaghavath Kesari</a><br>
+                <a href="#" class="line2">Rules Ranjan</a><br>
+                <a href="#" class="line2">Kushi</a><br>
+            </div>
+            <div id="last1"><b>Inspirational Movies</b><br>
+                <a href="#" class="line2">Mission Mangal</a><br>
+                <a href="#" class="line2">3 Idiots</a><br>
+                <a href="#" class="line2">Chichhorie</a><br>
+                <a href="#" class="line2">Surya - Son of India</a><br>
+                <a href="#" class="line2">Kamali From Nadukaveri</a><br>
+                <a href="#" class="line2">Sarkari Hiriya Pratamika Shale,Kasaragodu</a><br>
+                <a href="#" class="line2">Cinema Assistant</a><br>
+                <a href="#" class="line2">Help</a><br>
+            </div>
+        </div>
+        <div class="foot3">
+            <div class="logo end"></div>
+            <div class="batch">
+                <div>
+                    <select id="lang">
+                        <option>English</option>
+                    </select>
+                </div>
+                <div id="currency">Cinemas</div>
+                <div id="country">
+                    <div id="india"></div>&nbsp;&nbsp;India
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="foot4">
+            <div class="foot41">
+            <div id="Amazon">
+                <a href="#" class="line3"><b id="bold">Netflix contents</b></a><br>
+                <a href="#" class="line3">Enjoy Netflix membership</a><br>
+            </div>
+            <div id="Amazon">
+                <a href="#" class="line3"><b id="bold">Zee5</b></a><br>
+                <a href="#" class="line3">Enjoy the HD Quality subscription Videos for free</a><br>
+            </div>
+            <div id="Amazon">
+                <a href="#" class="line3"><b id="bold">Voot</b></a><br>
+                <a href="#" class="line3">Download Videos in minutes</a><br>
+            </div>
+            <div id="Amazon">
+                <a href="#" class="line3"><b id="bold">Disney</b></a><br>
+                <a href="#" class="line3">See Animation Movies for free</a><br>
+            </div>
+            <div id="Amazon">
+                <a href="#" class="line3"><b id="bold">Jio Cinemas</b></a><br>
+                <a href="#" class="line3">Sports 100% Hd Qaulity</a><br>
+            </div>
+            <div id="Amazon">
+                <a href="#" class="line3"><b id="bold">Amazon Mini TV</b></a><br>
+                <a href="#" class="line3">Watch All Series For Free</a><br>
+            </div>
+            <div id="Amazon">
+                <a href="#" class="line3"><b id="bold">Disney+Hotstar</b></a><br>
+                <a href="#" class="line3">Wacth Recent Movies</a><br>
+            </div>
+            </div>
+            <div class="foot41">
+                <div id="Amazon">
+                    <a href="#" class="line3"><b id="bold">Cinema Center</b></a><br>
+                    <a href="#" class="line3">Kannada Recent Movies</a><br>
+                </div>
+                <div id="Amazon">
+                    <a href="#" class="line3"><b id="bold">Tamil-Kolly</b></a><br>
+                    <a href="#" class="line3">All Recent movies</a><br>
+                </div>
+                <div id="Amazon">
+                    <a href="#" class="line3"><b id="bold">Tamil A-Z movies</b></a><br>
+                    <a href="#" class="line3">All Reacent movies Tamil Dubbed</a><br>
+                </div>
+                <div id="Amazon">
+                    <a href="#" class="line3"><b id="bold">Kannada Blockbusters</b></a><br>
+                    <a href="#" class="line3">HD Quality Movies</a><br>
+                </div>
+                <div id="Amazon">
+                    <a href="#" class="line3"><b id="bold">Movie Hamgama</b></a><br>
+                    <a href="#" class="line3">Watch All Telugu Blockbusters For Free</a><br>
+                </div>
+            </div>
+            <div class="foot41">
+                <div id="Amazon">
+                    <a href="#" class="line3"><b id="bold">Terabox apps</b></a><br>
+                    <a href="#" class="line3">Download To See Movies</a><br>
+                </div>
+                <div id="Amazon">
+                    <a href="#" class="line3"><b id="bold">PlayIt</b></a><br>
+                    <a href="#" class="line3">Watch Recent Movies Without Adds</a><br>
+                </div>
+                <div id="Amazon">
+                    <a href="#" class="line3"><b id="bold">Player Jet</b></a><br>
+                    <a href="#" class="line3">All Recent Movies Uploaded In Net</a><br>
+                </div>
+                <div id="Amazon">
+                    <a href="#" class="line3"><b id="bold">Search movies</b></a><br>
+                    <a href="#" class="line3">Download To See all Piracy Vedios</a><br>
+                </div>
+                <div id="Amazon">
+                    <a href="#" class="line3"><b id="bold">Media Fire</b></a><br>
+                    <a href="#" class="line3">Upload Any New Movies Here</a><br>
+                </div>
+                <div id="Amazon">
+                    <a href="#" class="line3"><b id="bold">Sell Your Teater Print</b></a><br>
+                    <a href="#" class="line3">Without any Fear, Interact with our Buyers</a><br>
+                </div>
+            </div>
+            <div class="finish">
+            <div id="theend">
+                <div class="final"><a href="#" class="line3">conditions of use</a></div>
+                <div class="final"><a href="#" class="line3">privacy notice</a></div>
+                <div class="final"><a href="#" class="line3">your ads privacy choices &#x2611;</a></div>
+            </div>
+            <div id="theend">
+                <div class="final"><a href="#" class="line3">&copy;</a></div>
+                <div class="final"><a href="#" class="line3">1993-2023</a></div>
+                <div class="final"><a href="#" class="line3">0111-022-1237</a></div>
+            </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

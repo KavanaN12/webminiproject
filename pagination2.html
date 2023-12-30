@@ -1,0 +1,80 @@
+<html lang="eng">
+
+<head>
+<style>
+h1{
+    text-align:center;
+}
+</style>
+<h1>Pan India Movies</h1>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Pagination of movie cards</title>
+
+<link rel="stylesheet" href="style.css"></head>
+<body>
+
+
+<div class="container">
+<div class="list-wrapper">
+<div class="list-item">
+<div class="content">
+<img src="https://m.media-amazon.com/images/M/MV5BOWZjMjkwM2QtZTJiMy00MmI5LWI2YjEtMmY5NjNiYTE2NTBiXkEyXkFqcGdeQXVyNjQ2MjQ5NzM@._V1_.jpg">
+<div class="text">
+<h3>Padmavat</h3>
+<p>IMBD</P>
+</div>
+</div>
+<div class="DESCRIPTION">
+<div class="d-text">
+
+<h4>Drescription</h4>
+<p>Set in medieval Rajasthan, Queen Padmavati is married to a noble king and they live in a prosperous fortress with their subjects until an ambitious Sultan hears of Padmavati's beauty and forms an obsessive love for the Queen of Mewar.<br>
+<h4>Director</h4>
+<p>Sanjay leela bansali</p>
+<h4>Cast</h4>
+<p>Ranveer Singh<br>
+Shahid Kapoor<br>
+Deepika Padukone<br>
+Aditi Rao<br>
+jim sarabh<br>
+music director:
+sanjay leela bansali,sanchit balhara,ankit balhara.<br></p>
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div id="pagination-container"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https:cdjns.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery,simplePagination.min.js"></script>
+<script>
+ var items=$('.list-wrapper.list-item');
+varnumItems=items.length;
+var perPage=3;
+
+items.slice(perPage).hide()
+('#pagination-container').pagination({
+items:numItems,
+ItemsOnPage:perPage,
+prevText:",",
+nextText:">",
+onPageClick:function(pageNumber){
+var showFrom=perPage*(pageNumber-1);
+items.hide().slice(showFrom,showTo).show();
+}
+})
+</script>
+</body>

@@ -1,0 +1,67 @@
+<html lang="eng">
+
+<head>
+<style>
+h1{
+    text-align:center;
+}
+</style>
+<h1>Kids movies</h1>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Pagination of movie cards</title>
+
+<link rel="stylesheet" href="style.css"></head>
+<body>
+
+
+<div class="container">
+<div class="list-wrapper">
+<div class="list-item">
+<div class="content">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3gcewOMzWi0gbnpPVbBIU4c-IkUkMh8w13RL6GTG1Mw&s">
+<div class="text">
+<h3>Finding Nemo</h3>
+<p>IMBD</P>
+</div>
+</div>
+<div class="DESCRIPTION">
+<div class="d-text">
+
+<h4>Drescription</h4>
+
+<p>Finding Nemo is a 2003 American animated comedy-drama adventure film[2] produced by Pixar Animation Studios for Walt Disney Pictures.<br> Directed by Andrew Stanton with co-direction by Lee Unkrich, the screenplay was written by Stanton, Bob Peterson, and David Reynolds from a story by Stanton.<br> The film stars the voices of Albert Brooks, Ellen DeGeneres, Alexander Gould, Willem Dafoe, and Geoffrey Rush.<br> It tells the story of an overprotective clownfish named Marlin (Brooks) who, along with a forgetful regal blue tang named Dory (DeGeneres), searches for his missing son Nemo (Gould). Along the way, Marlin learns to take risks and comes to terms with Nemo taking care of himself.</p>
+
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div id="pagination-container"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https:cdjns.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery,simplePagination.min.js"></script>
+<script>
+ var items=$('.list-wrapper.list-item');
+varnumItems=items.length;
+var perPage=3;
+
+items.slice(perPage).hide()
+('#pagination-container').pagination({
+items:numItems,
+ItemsOnPage:perPage,
+prevText:",",
+nextText:">",
+onPageClick:function(pageNumber){
+var showFrom=perPage*(pageNumber-1);
+items.hide().slice(showFrom,showTo).show();
+}
+})
+</script>
+</body>
+

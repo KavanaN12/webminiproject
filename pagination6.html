@@ -1,0 +1,65 @@
+<html lang="eng">
+
+<head>
+<style>
+h1{
+    text-align:center;
+}
+</style>
+<h1>Kids movies</h1>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Pagination of movie cards</title>
+
+<link rel="stylesheet" href="style.css"></head>
+<body>
+
+
+<div class="container">
+<div class="list-wrapper">
+<div class="list-item">
+<div class="content">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReVl9XXi3SdMsk41b6ab0VO0Tf6bTVSvoHYV1gkm0LmQ&s">
+<div class="text">
+<h3>Coco</h3>
+<p>IMBD</P>
+</div>
+</div>
+<div class="DESCRIPTION">
+<div class="d-text">
+
+<h4>Drescription:</h4>
+
+<p>Coco is a 2017 American animated fantasy film produced by Pixar Animation Studios and released by Walt Disney Pictures.<br> It was based on an original idea by director <h4>Lee Unkrich, co-directed by Adrian Molina, and produced by Darla K. Anderson,</h4> from a screenplay written by Molina and Matthew Aldrich, and a story by Unkrich, Molina, Aldrich, and Jason Katz.<h4> The film stars the voices of Anthony Gonzalez, Gael García Bernal, Benjamin Bratt, Alanna Ubach, Renée Victor, Ana Ofelia Murguía, and Edward James Olmos.</h4> The story follows a 12-year-old boy named Miguel (Gonzalez) who is accidentally transported to the Land of the Dead, where he seeks the help of his deceased musician great-great-grandfather to return him to his family among the living and to reverse his family's ban on music.</p>
+</div>
+
+</div>
+
+</div>
+</div>
+<div id="pagination-container"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https:cdjns.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery,simplePagination.min.js"></script>
+<script>
+ var items=$('.list-wrapper.list-item');
+varnumItems=items.length;
+var perPage=3;
+
+items.slice(perPage).hide()
+('#pagination-container').pagination({
+items:numItems,
+ItemsOnPage:perPage,
+prevText:",",
+nextText:">",
+onPageClick:function(pageNumber){
+var showFrom=perPage*(pageNumber-1);
+items.hide().slice(showFrom,showTo).show();
+}
+})
+</script>
+</body>
+

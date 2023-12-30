@@ -1,0 +1,66 @@
+<html lang="eng">
+
+<head>
+<style>
+h1{
+    text-align:center;
+}
+</style>
+<h1>Kids movies</h1>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Pagination of movie cards</title>
+
+<link rel="stylesheet" href="style.css"></head>
+<body>
+
+
+<div class="container">
+<div class="list-wrapper">
+<div class="list-item">
+<div class="content">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTdqesX3nknM9BrB735LCYGF7pYAHGZ0giB57mJbtYKg&s">
+<div class="text">
+<h3>Rio</h3>
+<p>IMBD</P>
+</div>
+</div>
+<div class="DESCRIPTION">
+<div class="d-text">
+
+<h4>Drescription</h4>
+
+<p>Rio is a 2011 American animated musical adventure comedy film produced by Blue Sky Studios and 20th Century Fox Animation.<br> It was directed by Carlos Saldanha from a screenplay written by Don Rhymer, Joshua Sternin, Jeffrey Ventimilia, and Sam Harper,<br> based on a story conceived by Saldanha and the writing team of Earl Richey Jones and Todd Jones.<br> The title refers to the Brazilian city of Rio de Janeiro,[5] where the film is set.<br><h4> The film features the voices of Jesse Eisenberg, Anne Hathaway, Leslie Mann, Rodrigo Santoro, Jemaine Clement, George Lopez, Tracy Morgan, will.i.am, and Jamie Foxx.</h4> It tells the story of Blu (Eisenberg), a domesticated male Spix's macaw who is taken to Rio de Janeiro to mate with a free-spirited female Spix's macaw, Jewel (Hathaway). The two eventually fall in love, and together they have to escape from being smuggled by Nigel (Clement), a cockatoo.
+
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div id="pagination-container"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https:cdjns.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery,simplePagination.min.js"></script>
+<script>
+ var items=$('.list-wrapper.list-item');
+varnumItems=items.length;
+var perPage=3;
+
+items.slice(perPage).hide()
+('#pagination-container').pagination({
+items:numItems,
+ItemsOnPage:perPage,
+prevText:",",
+nextText:">",
+onPageClick:function(pageNumber){
+var showFrom=perPage*(pageNumber-1);
+items.hide().slice(showFrom,showTo).show();
+}
+})
+</script>
+</body>

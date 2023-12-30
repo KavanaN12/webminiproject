@@ -1,0 +1,71 @@
+<html lang="eng">
+
+<head>
+<style>
+h1{
+    text-align:center;
+}
+</style>
+<h1>Love Stories</h1>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Pagination of movie cards</title>
+
+<link rel="stylesheet" href="style.css"></head>
+<body>
+
+
+<div class="container">
+<div class="list-wrapper">
+<div class="list-item">
+<div class="content">
+<img src="https://upload.wikimedia.org/wikipedia/en/a/ab/Rab_Ne_Bana_Di_Jodi.jpg">
+<div class="text">
+<h3>Rab Ne Banadi Jodi</h3>
+<p>IMBD</P>
+</div>
+</div>
+<div class="DESCRIPTION">
+<div class="d-text">
+
+<h4>Drescription:</h4>
+<p>.This is a story of Surinder Sahni (Shahrukh Khan) - a simple, clean hearted, honest man, leading a humdrum life, when he meets his total opposite and finds love in the flamboyant, fun-loving, vivacious - Taani (Anushka Sharma). What follows is a journey filled with laughter, tears, joy, pain, music, dance...that makes us believe that there is an extraordinary love story in every ordinary couple.<br>
+
+Director:
+Aditya Chopra<br>
+Writer:
+Aditya Chopra<br>
+Stars:
+Shah Rukh Khan<br>Anushka Sharma<br>Vinay Pathak<br>
+</p>
+</div>
+
+</div>
+
+</div>
+</div>
+<div id="pagination-container"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https:cdjns.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery,simplePagination.min.js"></script>
+<script>
+ var items=$('.list-wrapper.list-item');
+varnumItems=items.length;
+var perPage=3;
+
+items.slice(perPage).hide()
+('#pagination-container').pagination({
+items:numItems,
+ItemsOnPage:perPage,
+prevText:",",
+nextText:">",
+onPageClick:function(pageNumber){
+var showFrom=perPage*(pageNumber-1);
+items.hide().slice(showFrom,showTo).show();
+}
+})
+</script>
+</body>
